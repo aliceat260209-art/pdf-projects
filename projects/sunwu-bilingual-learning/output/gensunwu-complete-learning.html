@@ -1,0 +1,1859 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>《孙子兵法》全十三篇中英文学习版</title>
+    <style>
+      @page { size: A4; margin: 14mm; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: #18201f;
+        background: white;
+        font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+      }
+      .page {
+        position: relative;
+        min-height: 269mm;
+        page-break-after: always;
+        overflow: hidden;
+      }
+      .eyebrow, h2, footer, .toc td:first-child, .toc td:last-child {
+        font-family: Inter, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+      .eyebrow {
+        margin: 0 0 6mm;
+        color: #a74732;
+        font-size: 9pt;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .cover {
+        display: grid;
+        align-content: center;
+        gap: 12mm;
+        padding: 0 5mm;
+      }
+      .cover h1 {
+        margin: 0;
+        font-size: 56pt;
+        line-height: 1.06;
+      }
+      .subtitle {
+        margin: 6mm 0 0;
+        color: #24384d;
+        font: 900 18pt Inter, Arial, sans-serif;
+      }
+      .summary {
+        width: 82%;
+        margin: 8mm 0 0;
+        color: #5f6a62;
+        font-size: 11.5pt;
+        line-height: 1.9;
+      }
+      .cover-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3mm;
+      }
+      .cover-card {
+        min-height: 16mm;
+        padding: 2.5mm 3mm;
+        border: 1px solid rgba(24, 32, 31, .14);
+        border-radius: 3mm;
+        background: #f7f4ec;
+      }
+      .cover-card span {
+        color: #a74732;
+        font: 900 8pt Inter, Arial, sans-serif;
+      }
+      .cover-card strong {
+        display: block;
+        margin-top: 1mm;
+        color: #24384d;
+      }
+      .toc h1, .review h1 {
+        margin: 0 0 8mm;
+        font-size: 32pt;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .toc td {
+        padding: 2.4mm 0;
+        border-top: 1px solid rgba(24, 32, 31, .16);
+        vertical-align: top;
+        font-size: 10.8pt;
+      }
+      .toc td:first-child {
+        width: 18mm;
+        color: #a74732;
+        font-weight: 900;
+      }
+      .toc td:last-child {
+        width: 16mm;
+        color: #5f6a62;
+        text-align: right;
+      }
+      .toc span {
+        color: #5f6a62;
+        font-size: 9pt;
+      }
+      .chapter-head > div {
+        display: grid;
+        grid-template-columns: 16mm 1fr;
+        gap: 5mm;
+        align-items: start;
+      }
+      .chapter-head span {
+        display: grid;
+        width: 13mm;
+        height: 13mm;
+        place-items: center;
+        border-radius: 50%;
+        background: #24384d;
+        color: white;
+        font: 900 10pt Inter, Arial, sans-serif;
+      }
+      .chapter-head h1 {
+        margin: 0;
+        font-size: 28pt;
+        line-height: 1.14;
+      }
+      .chapter-head p {
+        margin: 1mm 0 0;
+        color: #5f6a62;
+        font-size: 11pt;
+      }
+      .compact { margin-bottom: 10mm; }
+      .ink-diagram {
+        position: relative;
+        height: 62mm;
+        margin: 8mm 0 5mm;
+        border: 1px solid rgba(24, 32, 31, .14);
+        border-radius: 4mm;
+        background:
+          radial-gradient(circle at 78% 24%, rgba(167, 71, 50, .18), transparent 25mm),
+          radial-gradient(circle at 22% 24%, rgba(61, 105, 95, .16), transparent 30mm),
+          #f8f6ee;
+        overflow: hidden;
+      }
+      .sun {
+        position: absolute;
+        top: 8mm;
+        right: 18mm;
+        width: 24mm;
+        height: 24mm;
+        border-radius: 50%;
+        background: rgba(167, 71, 50, .16);
+      }
+      .mountain {
+        position: absolute;
+        bottom: 12mm;
+        width: 82mm;
+        height: 28mm;
+        background: rgba(36, 56, 77, .16);
+        clip-path: polygon(0 100%, 22% 52%, 34% 70%, 52% 20%, 74% 68%, 100% 100%);
+      }
+      .mountain.one { left: 0; }
+      .mountain.two { right: -8mm; bottom: 8mm; background: rgba(61, 105, 95, .16); }
+      .table {
+        position: absolute;
+        right: 24mm;
+        bottom: 13mm;
+        left: 24mm;
+        height: 2.5mm;
+        border-radius: 99px;
+        background: rgba(24, 32, 31, .7);
+      }
+      .master, .student {
+        position: absolute;
+        bottom: 16mm;
+        border-radius: 12mm 12mm 2mm 2mm;
+        background: #18201f;
+      }
+      .master::before, .student::before {
+        position: absolute;
+        top: -7mm;
+        left: 50%;
+        width: 7mm;
+        height: 7mm;
+        border: 1px solid rgba(24, 32, 31, .75);
+        border-radius: 50%;
+        background: #f8f1df;
+        content: "";
+        transform: translateX(-50%);
+      }
+      .master { left: 34mm; width: 13mm; height: 25mm; }
+      .student { width: 9mm; height: 17mm; }
+      .student.a { left: 86mm; background: #3d695f; }
+      .student.b { left: 103mm; background: #a74732; }
+      .label {
+        position: absolute;
+        right: 28mm;
+        bottom: 18mm;
+        display: grid;
+        width: 28mm;
+        height: 16mm;
+        place-items: center;
+        border: 1.5px solid rgba(184, 137, 63, .8);
+        border-radius: 3mm;
+        background: rgba(255, 255, 255, .62);
+        color: #24384d;
+        font-weight: 900;
+      }
+      .block, .question, .notes {
+        margin-top: 4mm;
+        padding-top: 3mm;
+        border-top: 1px solid rgba(24, 32, 31, .15);
+      }
+      h2 {
+        margin: 0 0 2mm;
+        color: #a74732;
+        font-size: 8.5pt;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .block p, .question p, li {
+        margin: 0;
+        font-size: 10.7pt;
+        line-height: 1.72;
+      }
+      .original p {
+        font-size: 11.5pt;
+        font-weight: 900;
+      }
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6mm;
+      }
+      .english p {
+        color: #24384d;
+        font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      }
+      .vocab {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3mm;
+      }
+      .word {
+        min-height: 16mm;
+        padding: 3mm;
+        border: 1px solid rgba(61, 105, 95, .18);
+        border-radius: 3mm;
+        background: rgba(61, 105, 95, .06);
+      }
+      .word strong {
+        display: block;
+        color: #3d695f;
+        font: 900 9.5pt Inter, Arial, sans-serif;
+      }
+      .word span {
+        display: block;
+        margin-top: 1mm;
+        color: #5f6a62;
+      }
+      .question {
+        padding: 4mm;
+        border: 1px solid rgba(167, 71, 50, .22);
+        border-radius: 3mm;
+        background: rgba(167, 71, 50, .055);
+      }
+      .notes div {
+        height: 18mm;
+        border-bottom: 1px solid rgba(24, 32, 31, .2);
+      }
+      .review td, .review th {
+        border: 1px solid rgba(24, 32, 31, .18);
+        padding: 2.2mm;
+        font-size: 9.4pt;
+      }
+      .review th {
+        background: #f7f4ec;
+        color: #24384d;
+        font: 900 8.5pt Inter, Arial, sans-serif;
+      }
+      footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: #747d78;
+        font-size: 8pt;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page cover">
+      <div>
+        <p class="eyebrow">亲子共读 · 初高中英语 · 策略思维</p>
+        <h1>跟孙武学英语</h1>
+        <p class="subtitle">《孙子兵法》全十三篇中英文学习版</p>
+        <p class="summary">本版本采用公版《孙子兵法》原文节选，并配套原创中文导读与英文学习表达。重点是帮助读者掌握十三篇的主旨，而不是替代完整古籍注释本。</p>
+      </div>
+      <div class="cover-grid">
+        <div class="cover-card"><span>01</span><strong>计篇</strong></div><div class="cover-card"><span>02</span><strong>作战篇</strong></div><div class="cover-card"><span>03</span><strong>谋攻篇</strong></div><div class="cover-card"><span>04</span><strong>军形篇</strong></div><div class="cover-card"><span>05</span><strong>兵势篇</strong></div><div class="cover-card"><span>06</span><strong>虚实篇</strong></div><div class="cover-card"><span>07</span><strong>军争篇</strong></div><div class="cover-card"><span>08</span><strong>九变篇</strong></div><div class="cover-card"><span>09</span><strong>行军篇</strong></div><div class="cover-card"><span>10</span><strong>地形篇</strong></div><div class="cover-card"><span>11</span><strong>九地篇</strong></div><div class="cover-card"><span>12</span><strong>火攻篇</strong></div><div class="cover-card"><span>13</span><strong>用间篇</strong></div>
+      </div>
+      <footer>跟孙武学英语 · 1</footer>
+    </section>
+
+    <section class="page toc">
+      <p class="eyebrow">Contents · 双语目录</p>
+      <h1>全十三篇</h1>
+      <table>
+      <tr>
+        <td>01</td>
+        <td>计篇<br /><span>Laying Plans</span></td>
+        <td>3</td>
+      </tr>
+    
+      <tr>
+        <td>02</td>
+        <td>作战篇<br /><span>Waging War</span></td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>03</td>
+        <td>谋攻篇<br /><span>Attack by Strategy</span></td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>04</td>
+        <td>军形篇<br /><span>Tactical Dispositions</span></td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>05</td>
+        <td>兵势篇<br /><span>Strategic Momentum</span></td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>06</td>
+        <td>虚实篇<br /><span>Weak and Strong Points</span></td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>07</td>
+        <td>军争篇<br /><span>Maneuvering</span></td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>08</td>
+        <td>九变篇<br /><span>Nine Variations</span></td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>09</td>
+        <td>行军篇<br /><span>The Army on the March</span></td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>10</td>
+        <td>地形篇<br /><span>Terrain</span></td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>11</td>
+        <td>九地篇<br /><span>The Nine Situations</span></td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>12</td>
+        <td>火攻篇<br /><span>Attack by Fire</span></td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>13</td>
+        <td>用间篇<br /><span>Intelligence and Information</span></td>
+        <td>27</td>
+      </tr>
+    </table>
+      <footer>跟孙武学英语 · 2</footer>
+    </section>
+
+    
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 1 · Laying Plans</p>
+        <div>
+          <span>01</span>
+          <div>
+            <h1>计篇</h1>
+            <p>行动之前，先判断局势。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">计篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>孙子曰：兵者，国之大事，死生之地，存亡之道，不可不察也。故经之以五事，校之以计，而索其情。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《计篇》讲的是行动前的判断。孙武提醒我们，重要事情不能靠冲动开始，而要先看目标、时机、环境、领导和规则。策略不是临场聪明，而是提前把关键条件看清楚。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Before taking action, a wise person studies the situation. Important decisions require clear goals, good timing, a realistic view of the environment, capable leadership, and workable rules.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 3</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>01</span>
+          <div>
+            <h1>计篇</h1>
+            <p>Laying Plans</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孙武爷爷摊开竹简说：真正会计划的人，不是等事情乱了才想办法，而是在开始前就问清楚：我们要做什么？条件够不够？风险在哪里？</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>考试、比赛、旅行、项目启动前，都可以先做一张“五事清单”。准备越清楚，行动越稳定。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>situation</strong>
+          <span>局势</span>
+        </div>
+      
+        <div class="word">
+          <strong>decision</strong>
+          <span>决定</span>
+        </div>
+      
+        <div class="word">
+          <strong>timing</strong>
+          <span>时机</span>
+        </div>
+      
+        <div class="word">
+          <strong>leadership</strong>
+          <span>领导力</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>最近一个重要任务开始前，你可以先检查哪五个条件？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 4</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 2 · Waging War</p>
+        <div>
+          <span>02</span>
+          <div>
+            <h1>作战篇</h1>
+            <p>资源有限，行动要有成本意识。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">作战篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>凡用兵之法，驰车千驷，革车千乘，带甲十万，千里馈粮，则内外之费，宾客之用，胶漆之材，车甲之奉，日费千金。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《作战篇》强调成本。任何行动都会消耗资源：时间、金钱、精力、人手和机会。孙武不是鼓励拖延，而是提醒我们：行动前要知道自己付得起什么，行动中要避免无谓消耗。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Every major action has a cost. It uses time, energy, money, attention, and people. A smart planner does not only ask, 'Can we do it?' but also asks, 'What will it cost, and can we sustain it?'</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 5</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>02</span>
+          <div>
+            <h1>作战篇</h1>
+            <p>Waging War</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子说：我想同时参加三个比赛。孙武爷爷问：你的时间、睡眠和练习质量够吗？如果资源被分散，最重要的目标也会被拖累。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>做计划时，不只写目标，还要写成本。真正聪明的努力，是把资源集中到最重要的事情上。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>cost</strong>
+          <span>成本</span>
+        </div>
+      
+        <div class="word">
+          <strong>resource</strong>
+          <span>资源</span>
+        </div>
+      
+        <div class="word">
+          <strong>sustain</strong>
+          <span>持续支撑</span>
+        </div>
+      
+        <div class="word">
+          <strong>focus</strong>
+          <span>集中</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你现在是否有一个目标正在消耗太多资源？它值得吗？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 6</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 3 · Attack by Strategy</p>
+        <div>
+          <span>03</span>
+          <div>
+            <h1>谋攻篇</h1>
+            <p>最高明的策略，是用智慧解决问题。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">谋攻篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>故上兵伐谋，其次伐交，其次伐兵，其下攻城。是故百战百胜，非善之善者也；不战而屈人之兵，善之善者也。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《谋攻篇》告诉我们，最好的解决方式不一定是硬碰硬。真正高明的人会先改变思路、沟通关系和条件，让问题在冲突升级前被解决。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>The best strategy is not always direct confrontation. A wise person solves problems by changing the plan, improving communication, and finding a better path before conflict becomes costly.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 7</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>03</span>
+          <div>
+            <h1>谋攻篇</h1>
+            <p>Attack by Strategy</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>两个小组争同一块展示板。孙武爷爷没有让他们吵赢，而是让他们重新设计展示顺序，最后两个作品都被看见。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>在校园、家庭和职场里，先问：有没有不用争吵也能解决的方法？这就是“伐谋”的现代用法。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>strategy</strong>
+          <span>策略</span>
+        </div>
+      
+        <div class="word">
+          <strong>confrontation</strong>
+          <span>正面冲突</span>
+        </div>
+      
+        <div class="word">
+          <strong>communication</strong>
+          <span>沟通</span>
+        </div>
+      
+        <div class="word">
+          <strong>solution</strong>
+          <span>解决方案</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你最近遇到的一个冲突，能不能用沟通或重新设计规则来解决？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 8</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 4 · Tactical Dispositions</p>
+        <div>
+          <span>04</span>
+          <div>
+            <h1>军形篇</h1>
+            <p>先让自己站稳，再寻找机会。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">军形篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>昔之善战者，先为不可胜，以待敌之可胜。不可胜在己，可胜在敌。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《军形篇》强调稳固自身。我们不能控制所有外部机会，但可以先把自己的基础打牢：知识、习惯、身体、团队和规则。站稳之后，机会来了才接得住。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>You cannot control every opportunity outside you, but you can strengthen what is inside your control. Build a strong foundation first, then wait for the right chance to act.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 9</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>04</span>
+          <div>
+            <h1>军形篇</h1>
+            <p>Tactical Dispositions</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子想马上参加演讲比赛。孙武爷爷说：先把稿子、发音、站姿和时间控制练稳。机会属于准备好的人。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>先做“不可胜”的部分：复习、练习、整理资料、保持健康。基础越稳，失误越少。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>foundation</strong>
+          <span>基础</span>
+        </div>
+      
+        <div class="word">
+          <strong>control</strong>
+          <span>控制</span>
+        </div>
+      
+        <div class="word">
+          <strong>opportunity</strong>
+          <span>机会</span>
+        </div>
+      
+        <div class="word">
+          <strong>prepare</strong>
+          <span>准备</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你现在最需要打牢的一个基础是什么？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 10</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 5 · Strategic Momentum</p>
+        <div>
+          <span>05</span>
+          <div>
+            <h1>兵势篇</h1>
+            <p>好结构能产生强大的势能。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">兵势篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>凡战者，以正合，以奇胜。故善战者，其势险，其节短。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《兵势篇》讲“势”。很多成功不是因为某个人突然很厉害，而是因为结构设计得好：分工清楚、节奏合适、关键动作连续发生。正是基础，奇是变化。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Momentum comes from structure. Clear roles, steady rhythm, and smart variation can make a team stronger than separate individuals working alone.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 11</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>05</span>
+          <div>
+            <h1>兵势篇</h1>
+            <p>Strategic Momentum</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>班级准备活动时，孙武爷爷把任务分成宣传、场地、主持和后勤。每个人只做清楚的一部分，整个活动就顺起来了。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>如果一件事很难推进，不只问谁更努力，也要问结构是否合理、节奏是否清楚。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>momentum</strong>
+          <span>势能</span>
+        </div>
+      
+        <div class="word">
+          <strong>structure</strong>
+          <span>结构</span>
+        </div>
+      
+        <div class="word">
+          <strong>rhythm</strong>
+          <span>节奏</span>
+        </div>
+      
+        <div class="word">
+          <strong>variation</strong>
+          <span>变化</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你的一个团队任务，能不能通过更清楚的分工来产生势能？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 12</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 6 · Weak and Strong Points</p>
+        <div>
+          <span>06</span>
+          <div>
+            <h1>虚实篇</h1>
+            <p>避开强处，寻找空处。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">虚实篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>夫兵形象水，水之形避高而趋下，兵之形避实而击虚。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《虚实篇》用水作比喻。水不会硬撞高山，而会流向低处。策略也是这样：不要总在最拥挤、最困难的地方硬拼，要找到更适合自己的切入点。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Strategy can be like water. Water avoids high ground and moves toward open space. In the same way, a smart learner avoids unnecessary resistance and finds a better point of entry.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 13</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>06</span>
+          <div>
+            <h1>虚实篇</h1>
+            <p>Weak and Strong Points</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子英语听力弱，却一直刷最难材料。孙武爷爷建议他从短音频开始，先找到能进步的入口。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>学习也有虚实。不要总盯着最痛苦的位置，先找能突破的小口子。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>weak point</strong>
+          <span>薄弱点</span>
+        </div>
+      
+        <div class="word">
+          <strong>strong point</strong>
+          <span>强点</span>
+        </div>
+      
+        <div class="word">
+          <strong>entry point</strong>
+          <span>切入点</span>
+        </div>
+      
+        <div class="word">
+          <strong>resistance</strong>
+          <span>阻力</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你现在遇到的难题，有没有更低阻力的切入点？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 14</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 7 · Maneuvering</p>
+        <div>
+          <span>07</span>
+          <div>
+            <h1>军争篇</h1>
+            <p>争取机会，也要管理风险。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">军争篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>军争之难者，以迂为直，以患为利。故迂其途，而诱之以利，后人发，先人至。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《军争篇》讲机动和取舍。最快的路不一定最直接，最好的机会也常伴随风险。成熟的策略是看清路径、节奏和代价。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Maneuvering means choosing the path wisely. The shortest-looking road may not be the best road. A smart person weighs speed, risk, timing, and cost together.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 15</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>07</span>
+          <div>
+            <h1>军争篇</h1>
+            <p>Maneuvering</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子想临时抱佛脚冲高分。孙武爷爷让他绕一点路：先补基础错题，再做综合题。看似慢，结果更快。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>做事不只看速度，也看路线。正确的绕路，有时是更快的直路。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>maneuver</strong>
+          <span>机动调整</span>
+        </div>
+      
+        <div class="word">
+          <strong>risk</strong>
+          <span>风险</span>
+        </div>
+      
+        <div class="word">
+          <strong>path</strong>
+          <span>路径</span>
+        </div>
+      
+        <div class="word">
+          <strong>trade-off</strong>
+          <span>取舍</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你现在追求速度的事情，是否需要先绕路补基础？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 16</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 8 · Nine Variations</p>
+        <div>
+          <span>08</span>
+          <div>
+            <h1>九变篇</h1>
+            <p>规则重要，但不能死板。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">九变篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>故将通于九变之利者，知用兵矣；将不通于九变之利者，虽知地形，不能得地之利矣。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《九变篇》提醒我们，环境会变化。规则和计划很重要，但不能机械执行。真正会做事的人，知道什么时候坚持，什么时候调整。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Plans are useful, but real situations change. A wise person understands the rules and also knows when the situation requires adjustment.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 17</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>08</span>
+          <div>
+            <h1>九变篇</h1>
+            <p>Nine Variations</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>下雨打乱了运动会计划。孙武爷爷没有抱怨天气，而是让大家改成室内团队挑战，活动仍然完成了。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>计划不是枷锁。遇到变化时，先判断目标是否不变，再调整方法。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>adjustment</strong>
+          <span>调整</span>
+        </div>
+      
+        <div class="word">
+          <strong>flexible</strong>
+          <span>灵活的</span>
+        </div>
+      
+        <div class="word">
+          <strong>rule</strong>
+          <span>规则</span>
+        </div>
+      
+        <div class="word">
+          <strong>condition</strong>
+          <span>条件</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你有哪些计划需要保留目标、改变方法？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 18</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 9 · The Army on the March</p>
+        <div>
+          <span>09</span>
+          <div>
+            <h1>行军篇</h1>
+            <p>观察细节，判断状态。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">行军篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>凡处军相敌，绝山依谷，视生处高，战隆无登，此处山之军也。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《行军篇》讲观察。孙武通过地形、行动、声音和细节判断局势。现代学习中，观察也很重要：状态、习惯、环境和反馈都在告诉我们问题在哪里。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Observation is a strategic skill. Details reveal conditions. A careful learner watches energy, habits, environment, and feedback before making a judgment.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 19</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>09</span>
+          <div>
+            <h1>行军篇</h1>
+            <p>The Army on the March</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子说自己“就是学不好”。孙武爷爷没有立刻下结论，而是观察：睡眠不够、错题不整理、手机干扰太多。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>不要急着给自己贴标签。先观察事实，再判断原因。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>observe</strong>
+          <span>观察</span>
+        </div>
+      
+        <div class="word">
+          <strong>detail</strong>
+          <span>细节</span>
+        </div>
+      
+        <div class="word">
+          <strong>condition</strong>
+          <span>状态</span>
+        </div>
+      
+        <div class="word">
+          <strong>feedback</strong>
+          <span>反馈</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你最近一个问题背后，有哪些可观察的细节？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 20</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 10 · Terrain</p>
+        <div>
+          <span>10</span>
+          <div>
+            <h1>地形篇</h1>
+            <p>不同地形，需要不同方法。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">地形篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>地形有通者，有挂者，有支者，有隘者，有险者，有远者。凡此六者，地之道也。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《地形篇》讲环境类型。不同问题有不同地形：有的容易推进，有的容易卡住，有的风险高，有的距离远。方法不能一套用到底。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Different terrains require different methods. Some tasks are open, some are blocked, some are risky, and some take a long time. Strategy begins when you match the method to the terrain.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 21</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>10</span>
+          <div>
+            <h1>地形篇</h1>
+            <p>Terrain</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孙武爷爷把学习任务分成六类：容易做、会卡住、需要合作、风险高、难度大、周期长。孩子发现每类都需要不同安排。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>先判断任务类型，再选择方法。不要用短跑方式完成长期任务。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>terrain</strong>
+          <span>地形</span>
+        </div>
+      
+        <div class="word">
+          <strong>method</strong>
+          <span>方法</span>
+        </div>
+      
+        <div class="word">
+          <strong>blocked</strong>
+          <span>受阻的</span>
+        </div>
+      
+        <div class="word">
+          <strong>long-term</strong>
+          <span>长期的</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你当前的一个目标属于哪种“地形”？方法匹配吗？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 22</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 11 · The Nine Situations</p>
+        <div>
+          <span>11</span>
+          <div>
+            <h1>九地篇</h1>
+            <p>处境不同，人的行动方式也不同。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">九地篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>用兵之法，有散地，有轻地，有争地，有交地，有衢地，有重地，有圮地，有围地，有死地。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《九地篇》关注处境。人在不同处境下会有不同心理：有时分散，有时犹豫，有时必须协作，有时必须全力以赴。优秀的领导者会根据处境调整组织方式。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>People behave differently in different situations. Some situations create distraction, some create hesitation, and some require full commitment. Good leadership adapts to the situation.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 23</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>11</span>
+          <div>
+            <h1>九地篇</h1>
+            <p>The Nine Situations</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>项目快截止时，孙武爷爷没有再增加新目标，而是让大家只保留最关键任务。处境变了，策略也要变。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>管理自己也一样。轻松阶段可以探索，关键阶段必须聚焦。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>situation</strong>
+          <span>处境</span>
+        </div>
+      
+        <div class="word">
+          <strong>commitment</strong>
+          <span>投入</span>
+        </div>
+      
+        <div class="word">
+          <strong>distraction</strong>
+          <span>分心</span>
+        </div>
+      
+        <div class="word">
+          <strong>adapt</strong>
+          <span>适应</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你现在处在探索阶段、推进阶段，还是必须聚焦的关键阶段？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 24</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 12 · Attack by Fire</p>
+        <div>
+          <span>12</span>
+          <div>
+            <h1>火攻篇</h1>
+            <p>强力行动必须谨慎使用。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">火攻篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>凡火攻有五：一曰火人，二曰火积，三曰火辎，四曰火库，五曰火队。夫战胜攻取，而不修其功者凶。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《火攻篇》在现代学习中可以理解为高强度手段。强力行动有用，但必须看时机、条件和后果。情绪化的强攻，可能伤到自己。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Powerful methods must be used carefully. Intense action can create results, but only when timing, conditions, and consequences are understood.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 25</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>12</span>
+          <div>
+            <h1>火攻篇</h1>
+            <p>Attack by Fire</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子想通宵复习。孙武爷爷说：短期冲刺有时必要，但如果破坏健康和第二天状态，就不是好策略。</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>冲刺、公开承诺、重大改变都属于强力手段。用之前先问：时机对吗？代价可承受吗？</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>intense</strong>
+          <span>高强度的</span>
+        </div>
+      
+        <div class="word">
+          <strong>consequence</strong>
+          <span>后果</span>
+        </div>
+      
+        <div class="word">
+          <strong>timing</strong>
+          <span>时机</span>
+        </div>
+      
+        <div class="word">
+          <strong>carefully</strong>
+          <span>谨慎地</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你准备使用的一个强力方法，代价和后果是什么？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 26</footer>
+    </section>
+  
+    <section class="page">
+      <header class="chapter-head">
+        <p class="eyebrow">Chapter 13 · Intelligence and Information</p>
+        <div>
+          <span>13</span>
+          <div>
+            <h1>用间篇</h1>
+            <p>信息质量决定判断质量。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="ink-diagram">
+        <div class="sun"></div>
+        <div class="mountain one"></div>
+        <div class="mountain two"></div>
+        <div class="table"></div>
+        <div class="master"></div>
+        <div class="student a"></div>
+        <div class="student b"></div>
+        <div class="label">用间篇</div>
+      </section>
+
+      <section class="block original">
+        <h2>关键原文</h2>
+        <p>故明君贤将，所以动而胜人，成功出于众者，先知也。先知者，不可取于鬼神，不可象于事，不可验于度，必取于人。</p>
+      </section>
+
+      <section class="two">
+        <div class="block">
+          <h2>中文导读</h2>
+          <p>《用间篇》讲信息。现代读法不是鼓励窥探别人，而是强调信息来源、验证和判断。做决定前，必须知道信息从哪里来，是否可靠，是否足够。</p>
+        </div>
+        <div class="block english">
+          <h2>English Learning Text</h2>
+          <p>Good decisions depend on good information. A wise person checks sources, asks the right people, verifies facts, and avoids acting on rumors or guesses.</p>
+        </div>
+      </section>
+
+      <footer>跟孙武学英语 · 27</footer>
+    </section>
+
+    <section class="page">
+      <header class="chapter-head compact">
+        <p class="eyebrow">Story · Vocabulary · Discussion</p>
+        <div>
+          <span>13</span>
+          <div>
+            <h1>用间篇</h1>
+            <p>Intelligence and Information</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="two">
+        <div class="block">
+          <h2>孙武爷爷讲故事</h2>
+          <p>孩子听说某个学习方法“特别有效”。孙武爷爷问：谁说的？适合谁？有没有证据？适合你现在的情况吗？</p>
+        </div>
+        <div class="block">
+          <h2>今日策略启发</h2>
+          <p>网络时代更需要信息素养。不要被标题、传闻和情绪带着走。</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>英语词汇</h2>
+        <div class="vocab">
+        <div class="word">
+          <strong>information</strong>
+          <span>信息</span>
+        </div>
+      
+        <div class="word">
+          <strong>source</strong>
+          <span>来源</span>
+        </div>
+      
+        <div class="word">
+          <strong>verify</strong>
+          <span>验证</span>
+        </div>
+      
+        <div class="word">
+          <strong>rumor</strong>
+          <span>传闻</span>
+        </div>
+      </div>
+      </section>
+
+      <section class="question">
+        <h2>亲子讨论 / Learning Task</h2>
+        <p>你最近相信的一条信息，是否检查过来源和证据？</p>
+      </section>
+
+      <section class="notes">
+        <h2>我的笔记</h2>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
+      <footer>跟孙武学英语 · 28</footer>
+    </section>
+  
+
+    <section class="page review">
+      <p class="eyebrow">Review · 全书复习清单</p>
+      <h1>十三篇策略地图</h1>
+      <table>
+        <thead>
+          <tr><th>序号</th><th>篇名</th><th>核心主题</th><th>我的掌握程度</th></tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td>01</td>
+        <td>计篇</td>
+        <td>行动之前，先判断局势。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>02</td>
+        <td>作战篇</td>
+        <td>资源有限，行动要有成本意识。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>03</td>
+        <td>谋攻篇</td>
+        <td>最高明的策略，是用智慧解决问题。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>04</td>
+        <td>军形篇</td>
+        <td>先让自己站稳，再寻找机会。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>05</td>
+        <td>兵势篇</td>
+        <td>好结构能产生强大的势能。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>06</td>
+        <td>虚实篇</td>
+        <td>避开强处，寻找空处。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>07</td>
+        <td>军争篇</td>
+        <td>争取机会，也要管理风险。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>08</td>
+        <td>九变篇</td>
+        <td>规则重要，但不能死板。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>09</td>
+        <td>行军篇</td>
+        <td>观察细节，判断状态。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>10</td>
+        <td>地形篇</td>
+        <td>不同地形，需要不同方法。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>11</td>
+        <td>九地篇</td>
+        <td>处境不同，人的行动方式也不同。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>12</td>
+        <td>火攻篇</td>
+        <td>强力行动必须谨慎使用。</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td>13</td>
+        <td>用间篇</td>
+        <td>信息质量决定判断质量。</td>
+        <td></td>
+      </tr>
+    </tbody>
+      </table>
+      <footer>跟孙武学英语 · Review</footer>
+    </section>
+  </body>
+</html>
