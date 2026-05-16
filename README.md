@@ -1,6 +1,12 @@
-# PDF Projects
+# Chinese Classics Bilingual Learning
 
-This repository is a general workspace for PDF-based learning products.
+中国经典智慧中英双语学习库
+
+This repository collects bilingual learning materials based on Chinese classics,
+including Chinese-English study PDFs, printable HTML exports, vocabulary notes,
+reading prompts, and source files for future updates.
+
+本仓库用于持续整理中国经典智慧的中英双语学习素材，适合英语学习、亲子共读、传统文化阅读、课堂补充材料和个人精读。
 
 ## Structure
 
@@ -15,6 +21,12 @@ projects/
 ## Current Projects
 
 - `sunwu-bilingual-learning`: 《跟孙武学英语》全十三篇中英文学习版
+
+## Keywords
+
+Chinese classics, Chinese-English bilingual learning, Mandarin learning,
+classical Chinese, public-domain classics, Sun Tzu, Art of War, English reading,
+study PDF, printable ebook.
 
 ## License
 
